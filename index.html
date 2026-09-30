@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOKYO CHEBURA RADIO — Support</title>
+<meta name="description" content="TOKYO CHEBURA RADIOへのサポートページ。Bitcoin、Ethereum、XRPで応援できます。">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#101820 0%,#17242d 100%);color:#f4f1e8;font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;min-height:100vh}
+.wrap{max-width:760px;margin:auto;padding:42px 18px 60px}
+.hero{text-align:center;margin-bottom:34px}
+.logo{font-size:42px;margin-bottom:10px}
+h1{font-size:30px;margin:0 0 10px;letter-spacing:.04em}
+.lead{color:#cbd3d5;line-height:1.8;margin:0}
+.card{background:#fff;color:#182026;border-radius:20px;padding:24px;margin:18px 0;box-shadow:0 12px 35px rgba(0,0,0,.22)}
+.card h2{margin:0 0 16px;font-size:22px}
+.address{background:#f1f3f4;border-radius:12px;padding:14px;word-break:break-all;font-family:monospace;font-size:14px;line-height:1.55;margin:12px 0}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+button{border:0;border-radius:10px;padding:11px 17px;font-weight:bold;cursor:pointer;background:#182026;color:#fff}
+.qr{display:block;width:180px;height:180px;margin:18px auto 6px}
+.note{font-size:13px;color:#5d666b;line-height:1.6}
+.footer{text-align:center;color:#9eaaae;font-size:13px;margin-top:30px;line-height:1.7}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#fff;color:#111;padding:12px 18px;border-radius:999px;display:none;box-shadow:0 5px 25px rgba(0,0,0,.3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="logo">🐻🎧🌧️</div>
+    <h1>TOKYO CHEBURA RADIO</h1>
+    <p class="lead">いつも聴いてくださってありがとうございます。<br>
+    チャンネルを気に入っていただけたら、コーヒー1杯分のサポートをいただけるとうれしいです ☕</p>
+  </div>
+
+  <div class="card">
+    <h2>₿ Bitcoin (BTC)</h2>
+    <img class="qr" alt="Bitcoin QR code"
+      src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=1KbJhdTAvX9VEauLvnFHBfWhr56jdtTTcz">
+    <div class="address">1KbJhdTAvX9VEauLvnFHBfWhr56jdtTTcz</div>
+    <div class="row"><button onclick="copyText('1KbJhdTAvX9VEauLvnFHBfWhr56jdtTTcz')">アドレスをコピー</button></div>
+  </div>
+
+  <div class="card">
+    <h2>Ξ Ethereum (ETH)</h2>
+    <img class="qr" alt="Ethereum QR code"
+      src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=0x75ff7b2dcbe8f2bf3d766d9cdc6108acb52a5fa7">
+    <div class="address">0x75ff7b2dcbe8f2bf3d766d9cdc6108acb52a5fa7</div>
+    <div class="row"><button onclick="copyText('0x75ff7b2dcbe8f2bf3d766d9cdc6108acb52a5fa7')">アドレスをコピー</button></div>
+  </div>
+
+  <div class="card">
+    <h2>XRP</h2>
+    <img class="qr" alt="XRP QR code"
+      src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=rM8knDKx1Amk7VTbmMAiSfAMimE6Tn4cPp">
+    <div class="address">rM8knDKx1Amk7VTbmMAiSfAMimE6Tn4cPp</div>
+    <div class="row"><button onclick="copyText('rM8knDKx1Amk7VTbmMAiSfAMimE6Tn4cPp')">アドレスをコピー</button></div>
+    <p class="note">⚠️ XRPを送金する際は、送金先が必要とするネットワークおよびDestination Tag / Memoの有無を必ず確認してください。</p>
+  </div>
+
+  <div class="footer">
+    🌧️ 東京の夜とLo-Fiを、これからも。<br>
+    一緒にゆったり過ごしてくれてありがとう。<br><br>
+    TOKYO CHEBURA RADIO
+  </div>
+</div>
+<div id="toast" class="toast">コピーしました ✓</div>
+<script>
+function copyText(text){
+  navigator.clipboard.writeText(text).then(function(){
+    const t=document.getElementById('toast'); t.style.display='block';
+    setTimeout(()=>t.style.display='none',1600);
+  });
+}
+</script>
+</body>
+</html>
